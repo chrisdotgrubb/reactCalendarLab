@@ -45,10 +45,14 @@
 }
 
 .category {
-    border: #282c34 solid 2px;
     border-radius: 20px;
+    outline: 8px solid;
     margin: 10px;
     height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
 }
 
 .calendar {
@@ -68,16 +72,24 @@
 
 .holiday {
     background-color: #ffe22e;
+    outline-color: #ffe22e;
 }
 
 .work {
     background-color: #5c51ff;
+    outline-color: #5c51ff;
 }
 
 .errands {
     background-color: #25a61f;
+    outline-color: #25a61f;
 }
 
 .sick {
     background-color: #63ffd8;
+    outline-color: #63ffd8;
+}
+
+.selected {
+    outline: 8px solid black;
 }

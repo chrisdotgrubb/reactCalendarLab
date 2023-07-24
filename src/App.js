@@ -41,12 +41,19 @@ export default function App() {
 	}
 	
 	function handleCategoryClick(e) {
+		const target = e.currentTarget
+		target.classList.toggle('selected')
 		setSelectedCategory(e.target.id)
 	}
 	
 	const allDays = dates.map(d => {
 		const dayOfWeek = getDayOfWeek(d - 1)
-		return <Day date={d} dayOfWeek={dayOfWeek} key={d} category={selectedCategory}/>
+		return <Day
+			date={d}
+			dayOfWeek={dayOfWeek}
+			key={d}
+			category={selectedCategory}
+		/>
 	})
 	
 	const categories = ['holiday', 'work', 'errands', 'sick'];

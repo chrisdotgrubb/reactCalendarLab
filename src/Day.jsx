@@ -4,7 +4,9 @@ function handleDayClick(e, category) {
 		target.classList.remove(category)
 	} else {
 		target.className = 'day'
-		target.classList.add(category)
+		if (category) {
+			target.classList.add(category)
+		}
 	}
 }
 
