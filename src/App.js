@@ -1,8 +1,10 @@
 import "./App.css";
 import Day from "./Day";
+import {useState} from "react";
 
 
 export default function App() {
+	const [selectedCategory, setSelectedCategory] = useState(null);
 	
 	const days = [
 		{
@@ -32,12 +34,16 @@ export default function App() {
 	const dates = Array.from({length: 28}, (x, i) => i + 1)
 	
 	function getDayOfWeek(i) {
-				while ((i !== 6) && (Math.floor(i / 6))) {
-					i -= 7;
-				}
-				return days[i].name;
-			}
-			
+		while ((i !== 6) && (Math.floor(i / 6))) {
+			i -= 7;
+		}
+		return days[i].name;
+	}
+	
+	function handleCategoryClick(e) {
+		setSelectedCategory(e.target.id)
+	}
+	
 	const allDays = dates.map(d => {
 		const dayOfWeek = getDayOfWeek(d - 1)
 		return <Day date={d} dayOfWeek={dayOfWeek} key={d}/>
@@ -46,7 +52,12 @@ export default function App() {
 	const categories = ['holiday', 'work', 'errands', 'sick'];
 	const allCategories = categories.map((cat, idx) => {
 		return (
-			<div className={`category ${cat}`} key={idx}>
+			<div
+				id={cat}
+				className={`category ${cat}`}
+				key={idx}
+				onClick={handleCategoryClick}
+			>
 				{cat}
 			</div>
 		)
