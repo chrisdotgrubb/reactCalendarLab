@@ -40,12 +40,24 @@ export default function App() {
 			
 	const allDays = dates.map(d => {
 		const dayOfWeek = getDayOfWeek(d - 1)
-		return <Day date={d} dayOfWeek={dayOfWeek} />
+		return <Day date={d} dayOfWeek={dayOfWeek} key={d}/>
 	})
+	
+	const categories = ['holiday', 'work', 'errands', 'sick'];
+	const allCategories = categories.map((cat, idx) => {
+		return (
+			<div className={`category ${cat}`} key={idx}>
+				{cat}
+			</div>
+		)
+	});
 	
 	return (
 		<div className="App">
 			<h1>React Calendar</h1>
+			<div className={'categories'}>
+				{allCategories}
+			</div>
 			<div className={'calendar'}>
 				{allDays}
 			</div>
