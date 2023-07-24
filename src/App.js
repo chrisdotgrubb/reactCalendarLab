@@ -1,4 +1,5 @@
 import "./App.css";
+import Day from "./Day";
 
 
 export default function App() {
@@ -37,16 +38,10 @@ export default function App() {
 				return days[i].name;
 			}
 			
-	const allDays = dates.map((date) => {
-			const dayOfWeek = getDayOfWeek(date - 1)
-			return (
-				<div className={'day'}>
-					<div>{dayOfWeek}</div>
-					<div>{date}</div>
-				</div>
-			)
-		}
-	)
+	const allDays = dates.map(d => {
+		const dayOfWeek = getDayOfWeek(d - 1)
+		return <Day date={d} dayOfWeek={dayOfWeek} />
+	})
 	
 	return (
 		<div className="App">
