@@ -42,8 +42,16 @@ export default function App() {
 	
 	function handleCategoryClick(e) {
 		const target = e.currentTarget
-		target.classList.toggle('selected')
-		setSelectedCategory(e.target.id)
+		let value = target.id
+		if (target.classList.contains('selected')) {
+			target.classList.remove('selected')
+			value = ''
+		} else {
+			const nodes = target.parentElement.childNodes
+			nodes.forEach(child => child.classList.remove('selected'))
+			target.classList.add('selected')
+		}
+		setSelectedCategory(value)
 	}
 	
 	const allDays = dates.map(d => {

@@ -1,12 +1,11 @@
 function handleDayClick(e, category) {
+	if (category === '') return
 	const target = e.currentTarget
 	if (target.classList.contains(category)) {
 		target.classList.remove(category)
 	} else {
 		target.className = 'day'
-		if (category) {
-			target.classList.add(category)
-		}
+		target.classList.add(category)
 	}
 }
 
