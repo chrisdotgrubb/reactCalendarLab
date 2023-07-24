@@ -36,3 +36,18 @@
         transform: rotate(360deg);
     }
 }
+
+.calendar {
+    width: 80%;
+    margin: 100px auto;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto;
+    grid-gap: 30px;
+}
+
+.day {
+    border: #282c34 solid 2px;
+    border-radius: 20px;
+    background-color: #fa5d49;
+    padding: 10px;
+}

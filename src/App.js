@@ -37,10 +37,13 @@ export default function App() {
 				return days[i].name;
 			}
 			
-	const allDays = dates.map((d) => {
-			const dayOfWeek = getDayOfWeek(d - 1)
+	const allDays = dates.map((date) => {
+			const dayOfWeek = getDayOfWeek(date - 1)
 			return (
-				<h6>{d} {dayOfWeek}</h6>
+				<div className={'day'}>
+					<div>{dayOfWeek}</div>
+					<div>{date}</div>
+				</div>
 			)
 		}
 	)
