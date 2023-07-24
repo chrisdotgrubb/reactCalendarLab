@@ -51,18 +51,6 @@
     height: 80px;
 }
 
-.holiday {
-    background-color: #ffe22e;
-}
-.work {
-    background-color: #5c51ff;
-}
-.errands {
-    background-color: #25a61f;
-}
-.sick {
-    background-color: #63ffd8;
-}
 .calendar {
     width: 80%;
     margin: 0 auto;
@@ -76,4 +64,20 @@
     border-radius: 20px;
     background-color: #fa5d49;
     padding: 10px;
+}
+
+.holiday {
+    background-color: #ffe22e;
+}
+
+.work {
+    background-color: #5c51ff;
+}
+
+.errands {
+    background-color: #25a61f;
+}
+
+.sick {
+    background-color: #63ffd8;
 }

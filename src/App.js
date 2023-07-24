@@ -4,7 +4,7 @@ import {useState} from "react";
 
 
 export default function App() {
-	const [selectedCategory, setSelectedCategory] = useState(null);
+	const [selectedCategory, setSelectedCategory] = useState('');
 	
 	const days = [
 		{
@@ -46,7 +46,7 @@ export default function App() {
 	
 	const allDays = dates.map(d => {
 		const dayOfWeek = getDayOfWeek(d - 1)
-		return <Day date={d} dayOfWeek={dayOfWeek} key={d}/>
+		return <Day date={d} dayOfWeek={dayOfWeek} key={d} category={selectedCategory}/>
 	})
 	
 	const categories = ['holiday', 'work', 'errands', 'sick'];
