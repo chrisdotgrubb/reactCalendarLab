@@ -33,13 +33,6 @@ export default function App() {
 	// The following creates an array of numbers from [1..28]
 	const dates = Array.from({length: 28}, (x, i) => i + 1)
 	
-	function getDayOfWeek(i) {
-		while ((i !== 6) && (Math.floor(i / 6))) {
-			i -= 7;
-		}
-		return days[i].name;
-	}
-	
 	function handleCategoryClick(e) {
 		const target = e.currentTarget
 		let value = target.id
@@ -54,8 +47,8 @@ export default function App() {
 		setSelectedCategory(value)
 	}
 	
-	const allDays = dates.map(d => {
-		const dayOfWeek = getDayOfWeek(d - 1)
+	const allDays = dates.map((d, idx) => {
+		const dayOfWeek = days[idx % 7].name;
 		return <Day
 			date={d}
 			dayOfWeek={dayOfWeek}
